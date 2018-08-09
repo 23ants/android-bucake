@@ -14,6 +14,7 @@ import com.google.android.gms.ads.AdView;
 
 import pl.droidsonroids.gif.GifDrawable;
 import pl.droidsonroids.gif.GifImageButton;
+import com.google.android.gms.ads.MobileAds;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         initAdView();
         initGifView();
+        MobileAds.initialize(this, "ca-app-pub-3075568763018473~2009876394");
     }
 
     @Override
@@ -61,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initAdView() {
         AdView adView = findViewById(R.id.adView);
+        adView.setAdUnitId("ca-app-pub-3075568763018473/3387371399");
 
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
